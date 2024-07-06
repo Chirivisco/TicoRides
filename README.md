@@ -47,12 +47,7 @@
   <li>Editar Ride: 3 pantallas</li>
   <li>Eliminar Ride: 3 pantallas</li>
   <li>Bookings: 1 pantalla</li>
-</ul>
-
-<h3>Pantallas No Completadas</h3>
-<ul>
   <li>Configuración: 1 pantalla</li>
   <li>Buscar Rides: 1 pantalla</li>
   <li>Ver Ride: 3 pantallas</li>
 </ul>
-
