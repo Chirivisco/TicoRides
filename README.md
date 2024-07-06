@@ -3,9 +3,7 @@
 <h2>Tabla de Contenidos</h2>
 <ul>
   <li><a href="#descripcion">Descripción</a></li>
-  <li><a href="#funcionamiento">Funcionamiento</a></li>
   <li><a href="#tecnologias-empleadas">Tecnologías Empleadas</a></li>
-  <li><a href="#manual-de-instalacion">Manual de Instalación y Deployment</a></li>
   <li><a href="#roadmap">Roadmap</a></li>
   <li><a href="#estructura-del-proyecto">Estructura del Proyecto</a></li>
 </ul>
@@ -13,21 +11,12 @@
 <h2 id="descripcion">Descripción</h2>
 <p>Este proyecto es un prototipo funcional de una aplicación web, desarrollado como un "cascarón" sin almacenamiento de datos, para simular los requisitos funcionales. La aplicación permite la interacción de usuarios clientes y proveedores en un entorno de ridesharing.</p>
 
-<h2 id="funcionamiento">Funcionamiento</h2>
-<p>La aplicación simula el proceso de registro, autenticación y gestión de rides y bookings para usuarios clientes y proveedores.</p>
 
 <h2 id="tecnologias-empleadas">Tecnologías Empleadas</h2>
 <ul>
   <li><strong>HTML</strong>: Para la estructura de las páginas web.</li>
   <li><strong>CSS</strong>: Para el diseño y la presentación visual de las páginas.</li>
 </ul>
-
-<h2 id="manual-de-instalacion">Manual de Instalación y Deployment</h2>
-<p>Para ejecutar el proyecto localmente, sigue estos pasos:</p>
-<ol>
-  <li>Clona el repositorio a tu máquina local.</li>
-  <li>Abre los archivos HTML en tu navegador web preferido.</li>
-</ol>
 
 <h2 id="roadmap">Roadmap</h2>
 <ul>
