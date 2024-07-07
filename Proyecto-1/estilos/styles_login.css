@@ -1,0 +1,149 @@
+/*ESTILOS LOGIN*/
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.contenedor-principal {
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+header {
+    justify-content: center;
+    gap: 15px;
+    display: flex;
+    place-items: center;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 40px;
+    height: 40px;
+}
+
+.login-contenedor {
+    margin-bottom: 20px;
+}
+
+.btn-google {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    color: #2e8ac0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-google img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.btn-google:hover {
+    background-color: #f5f5f5;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.datos-form {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.datos-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.datos-form input {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.links {
+    margin-bottom: 20px;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;   
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+footer a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px;
+    color: #777;
+}

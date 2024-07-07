@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Ride</title>
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_shared.css">
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_edit_rides.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Proyecto-1/iconos/icono_aventones.png" alt="Car Icon">
+            <h1>AVENTONES</h1>
+        </div>
+        <div class="contenido-encabezado">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="active">Rides</a></li>
+                    <li><a href="#">Bookings</a></li>
+                </ul>
+            </nav>
+            <div class="campo-busqueda">
+                <input type="text" placeholder="Search...">
+                <div class="perfil-usuario">
+                    <img src="/Proyecto-1/iconos/profile_picture.png" alt="Icono de perfil">
+                    <div class="menu-perfil">
+                        <a href="../index.html">Logout</a>
+                        <a href="#">Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="contenido-principal">
+            <h2>New Ride</h2>
+            <hr>
+            <form>
+                <div class="grupo-formularios">
+                    <div class="formulario">
+                        <label for="departure">Departure from</label>
+                        <input type="text" id="departure" name="departure">
+                    </div>
+                    <div class="formulario">
+                        <label for="arrival">Arrive To</label>
+                        <input type="text" id="arrival" name="arrival">
+                    </div>
+                </div>
+                <label for="days">Days</label>
+                <div class="cb-dias">
+                    <input type="checkbox" id="mon" name="days" checked> Mon
+                    <input type="checkbox" id="tue" name="days"> Tue
+                    <input type="checkbox" id="wed" name="days"> Wed
+                    <input type="checkbox" id="thu" name="days"> Thu
+                    <input type="checkbox" id="fri" name="days" checked> Fri
+                    <input type="checkbox" id="sat" name="days"> Sat
+                    <input type="checkbox" id="sun" name="days"> Sun
+                </div>
+                <div class="grupo-formularios">
+                    <div class="formulario">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time" value="00:00">
+                    </div>
+                    <div class="formulario">
+                        <label for="seats">Seats</label>
+                        <input type="number" id="seats" name="seats" value="2" min="1">
+                    </div>
+                    <div class="formulario">
+                        <label for="fee">Fee</label>
+                        <input type="number" id="fee" name="fee" value="15" min="0">
+                    </div>
+                </div>
+                <div class="detalles-vehiculo">
+                    <h3>Vehicle Details</h3>
+                    <div class="grupo-formularios">
+                        <div class="formulario">
+                            <label for="make">Make</label>
+                            <select id="make" name="make">
+                                <option value="Nissan" selected>Nissan</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Ford">Ford</option>
+                            </select>
+                        </div>
+                        <div class="formulario">
+                            <label for="model">Model</label>
+                            <input type="text" id="model" name="model">
+                        </div>
+                        <div class="formulario">
+                            <label for="year">Year</label>
+                            <input type="number" id="year" name="year" value="2020" min="1900" max="2024">
+                        </div>
+                    </div>
+                </div>
+                <div class="acciones-form">
+                    <a href="../pantallas/my_rides.html" class="cancelar">Cancel</a>
+                    <button type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <a href="#">Home</a> |
+        <a href="../pantallas/my_rides.html">Rides</a> |
+        <a href="../pantallas/bookings.html">Bookings</a> |
+        <a href="#">Settings</a> |
+        <a href="../index.html">Login</a> |
+        <a href="../pantallas/user_reg.html">Register</a>
+        <p>&copy; Aventones.com</p>
+    </footer>
+</body>
+</html>

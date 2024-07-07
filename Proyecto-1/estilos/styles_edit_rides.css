@@ -1,0 +1,105 @@
+@import url('styles_shared.css');
+
+.contenido-principal {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+hr {
+    margin: 0 auto 40px;
+    width: 170px;
+}
+
+.contenido-principal h2 {
+    font-size: 2em;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.grupo-formularios {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 100px;
+}
+
+.formulario {
+    width: 48%;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formulario input,
+.formulario select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.cb-dias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.cb-dias input {
+    margin-right: 5px;
+}
+
+.detalles-vehiculo {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.detalles-vehiculo h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.acciones-form {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+    justify-content: space-between;
+}
+
+.acciones-form button {
+    padding: 15px 70px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.acciones-form button:hover {
+    background-color: #0056b3;
+}
+
+.acciones-form .cancelar {
+    color: #049cec;
+}
+
+.acciones-form .cancelar:hover {
+    color: #0675b1;
+}
+
+

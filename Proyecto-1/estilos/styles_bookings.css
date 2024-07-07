@@ -1,0 +1,66 @@
+@import url('styles_shared.css');
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contenido-main {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.contenido-main h2 {
+    font-size: 2.2em;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contenido-main hr {
+    margin: 0 auto 20px;
+    width: 170px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #ddd;
+}
+
+thead th {
+    padding: 10px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+tbody td img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+tbody td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+tbody td a:hover {
+    text-decoration: underline;
+}

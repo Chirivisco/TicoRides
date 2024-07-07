@@ -1,0 +1,120 @@
+/*ESTILOS DEL REGISTRO DE USUARIOS*/
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.contenedor-principal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+header {
+    justify-content: center;
+    gap: 15px;
+    display: flex;
+    place-items: center;
+    margin-bottom: 25px;
+}   
+
+header img {
+    width: 40px;
+    height: 40px;
+}
+
+header h2 {
+    font-weight: lighter;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.datos-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.datos-form input, .datos-form select {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.datos-form input[type="email"], .datos-form input[type="text"] {
+    width: 100%;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 13px;
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+footer a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px;
+    color: #777;
+}

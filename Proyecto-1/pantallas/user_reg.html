@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_reg.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <header>
+            <img id="icono_main" src="/Proyecto-1/iconos/icono_aventones.png" alt="icono_aventones">
+            <h1>AVENTONES</h1>
+        </header>
+        <h2>User Registration</h2>
+        <form>
+            <div class="datos-form">
+                <input type="text" id="first-name" placeholder="First Name">
+                <input type="text" id="last-name" placeholder="Last Name">
+            </div>
+            <div class="datos-form">
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div class="datos-form">
+                <input type="password" id="password" placeholder="Password">
+                <input type="password" id="repeat-password" placeholder="Repeat Password">
+            </div>
+            <div class="datos-form">
+                <input type="text" id="address" placeholder="Address">
+            </div>
+            <div class="datos-form">
+                <select id="paises">
+                    <option value="" disabled selected>Country</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Mexico">Mexico</option>
+                </select>
+                <input type="text" id="state" placeholder="State">
+            </div>
+            <div class="datos-form">
+                <input type="text" id="city" placeholder="City">
+                <input type="text" id="phone-number" placeholder="Phone Number">
+            </div>
+            <div class="links">
+                <p>Already an user? <a href="../index.html">Login here</a></p>
+                <p>Register as driver? <a href="#">Click here</a></p>
+            </div>
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+    <footer>
+        <a href="#">Home</a> |
+        <a href="../pantallas/my_rides.html">Rides</a> |
+        <a href="../pantallas/bookings.html">Bookings</a> |
+        <a href="#">Settings</a> |
+        <a href="../index.html">Login</a> |
+        <a href="../pantallas/user_reg.html">Register</a>
+        <p>&copy; Aventones.com</p>
+    </footer>
+</body>
+</html>
