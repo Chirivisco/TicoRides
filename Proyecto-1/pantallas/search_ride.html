@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search rides</title>
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_shared.css">
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_search_ride.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Proyecto-1/iconos/icono_aventones.png" alt="Car Icon">
+            <h1>AVENTONES</h1>
+        </div>
+        <div class="contenido-encabezado">
+            <nav>
+                <ul>
+                    <li><a href="../pantallas/edit_profile.html" class="active">Home</a></li>
+                    <li><a href="../pantallas/my_rides.html">Rides</a></li>
+                    <li><a href="../pantallas/bookings.html">Bookings</a></li>
+                </ul>
+            </nav>
+            <div class="campo-busqueda">
+                <input type="text" placeholder="Search...">
+                <div class="perfil-usuario">
+                    <img src="/Proyecto-1/iconos/profile_picture.png" alt="Profile Icon">
+                    <div class="menu-perfil">
+                        <a href="../index.html">Logout</a>
+                        <a href="/Proyecto-1/pantallas/edit_profile.html">Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="contenido-principal">
+            <h2>Search rides</h2>
+            <hr>
+            <div class="filtros-busqueda">
+                <form>
+                    <div class="filtro">
+                        <label for="desde">From</label>
+                        <select id="desde">
+                            <option value="quesada">Quesada</option>
+                            <option value="aguas_zarcas">Aguas Zarcas</option>
+                        </select>
+                        <label for="hasta" class="align-right">To</label>
+                        <select id="hasta">
+                            <option value="zarcero">Zarcero</option>
+                        </select>
+                        <button type="submit">Find rides</button>
+                    </div>
+                    <div class="filtro">
+                        <label>Days</label>
+                        <div class="cb-dias">
+                            <label><input type="checkbox" value="mon" checked>Mon</label>
+                            <label><input type="checkbox" value="tue" checked>Tue</label>
+                            <label><input type="checkbox" value="wed" checked>Wed</label>
+                            <label><input type="checkbox" value="thu" checked>Thu</label>
+                            <label><input type="checkbox" value="fri" checked>Fri</label>
+                            <label><input type="checkbox" value="sat" checked>Sat</label>
+                            <label><input type="checkbox" value="sun" checked>Sun</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="lista-rides">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Driver</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Seats</th>
+                            <th>Car</th>
+                            <th>Fee</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>barroyo</td>
+                            <td><a href="#">Quesada</a></td>
+                            <td>Alajuela</td>
+                            <td>2</td>
+                            <td>Nissan Pathfinder 2015</td>
+                            <td>$5</td>
+                            <td><a href="../pantallas/ride_details/ride_details_1.html">Request</a></td>
+                        </tr>
+                        <tr>
+                            <td>barroyo</td>
+                            <td><a href="#">Quesada</a></td>
+                            <td>Naranjo</td>
+                            <td>1</td>
+                            <td>Toyota Corolla 2020</td>
+                            <td>$10</td>
+                            <td><a href="../pantallas/ride_details/ride_details_2.html">Request</a></td>
+                        </tr>
+                        <tr>
+                            <td>yluna</td>
+                            <td><a href="#">Aguas Zarcas</a></td>
+                            <td>Naranjo</td>
+                            <td>1</td>
+                            <td>Ford Festiva 1990</td>
+                            <td>--</td>
+                            <td><a href="../pantallas/ride_details/ride_details_3.html">Request</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <img src="../iconos/map.png" alt="Map" id="mapa">        
+        </div>
+    </main>    
+    <footer>
+        <a href="../pantallas/search_ride.html">Home</a> |
+        <a href="../pantallas/my_rides.html">Rides</a> |
+        <a href="../pantallas/bookings.html">Bookings</a> |
+        <a href="../pantallas/edit_profile.html">Settings</a> |
+        <a href="../index.html">Login</a> |
+        <a href="../pantallas/user_reg.html">Register</a>
+        <p>&copy; Aventones.com</p>
+    </footer>
+</body>
+</html>

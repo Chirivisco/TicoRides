@@ -1,0 +1,99 @@
+@import url('styles_shared.css');
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contenido-principal {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.contenido-principal h2 {
+    font-size: 2.5em;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contenido-principal hr {
+    margin: 0 auto 20px;
+    width: 170px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grupo-formulario {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.grupo-formulario .formulario {
+    width: 48%;
+}
+
+.formulario label {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.formulario input,
+.formulario select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.acciones-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.acciones-form button {
+    padding: 15px 70px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.acciones-form button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.acciones-form button:hover {
+    background-color: #0056b3;
+}
+
+.acciones-form .cancelar {
+    color: #049cec;
+}
+
+.acciones-form .cancelar:hover {
+    color: #0675b1;
+}

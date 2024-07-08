@@ -1,0 +1,122 @@
+@import url('styles_shared.css');
+
+.contenido-principal {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+hr {
+    margin: 0 auto 40px;
+    width: 170px;
+}
+
+.contenido-principal h2 {
+    font-size: 2em;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.perfil p {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+form {
+    text-align: left;
+}
+
+#ruta {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: space-around;
+}
+
+#ruta div{
+    display: flex;
+    gap: 40px;
+}
+
+.informacion {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+.informacion label, #ruta label, label#lbl-dias {
+    font-weight: bold;
+}
+
+.cb-dias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.cb-dias input {
+    margin-right: 5px;
+}
+
+.datos-vehiculo {
+    border: 1px solid #ddd;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.datos-vehiculo label {
+    flex: 1;
+    font-weight: bold;
+}
+
+.datos-vehiculo p {
+    flex: 2;
+    text-align: left;
+}
+
+.acciones-form {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.acciones-form button {
+    padding: 15px 60px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.acciones-form button:hover {
+    background-color: #0056b3;
+}
+
+.acciones-form .cancelar {
+    color: #049cec;
+}
+
+.acciones-form .cancelar:hover {
+    color: #0675b1;
+}

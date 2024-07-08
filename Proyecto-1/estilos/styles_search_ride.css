@@ -1,0 +1,95 @@
+@import url('styles_shared.css');
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contenido-principal {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.contenido-principal h2 {
+    font-size: 2.5em;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contenido-principal hr {
+    margin: 0 auto 20px;
+    width: 170px;
+}
+
+.filtros-busqueda {
+    margin-bottom: 20px;
+    text-align: left;
+    border: black solid 1px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.filtro {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.filtro .align-right {
+    margin-left: auto;
+}
+
+.filtros-busqueda .cb-dias {
+    display: flex;
+}
+
+.filtros-busqueda .cb-dias label {
+    margin-right: 30px;
+}
+
+.filtros-busqueda .cb-dias input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.filtros-busqueda button {
+    padding: 5px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lista-rides table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.lista-rides th,
+.lista-rides td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.lista-rides th {
+    background-color: #f8f8f8;
+}
+
+.lista-rides  td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#mapa {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Esto asegurará que la imagen cubra todo el espacio sin distorsionarse */
+}

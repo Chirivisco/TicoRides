@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Ride</title>
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_shared.css">
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_ride_details.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Proyecto-1/iconos/icono_aventones.png" alt="Car Icon">
+            <h1>AVENTONES</h1>
+        </div>
+        <div class="contenido-encabezado">
+            <nav>
+                <ul>
+                    <li><a href="../search_ride.html">Home</a></li>
+                    <li><a href="../my_rides.html" class="active">Rides</a></li>
+                    <li><a href="../bookings.html">Bookings</a></li>
+                </ul>
+            </nav>
+            <div class="campo-busqueda">
+                <input type="text" placeholder="Search...">
+                <div class="perfil-usuario">
+                    <img src="/Proyecto-1/iconos/profile_picture.png" alt="Icono de perfil">
+                    <div class="menu-perfil">
+                        <a href="../index.html">Logout</a>
+                        <a href="/Proyecto-1/pantallas/edit_profile.html">Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="contenido-principal">
+            <h2>Aguas Zarcas - Naranjo</h2>
+            <hr>
+            <div class="perfil">
+                <img src="/Proyecto-1/iconos/profile_picture.png" alt="Icono de perfil">
+                <p>yluna</p>
+            </div>
+            <form>
+                <div id="ruta">
+                    <div>
+                    <label>Departure from</label>
+                    <p>Quesada</p>
+                    </div>
+                    <div>
+                    <label>Arrive To</label>
+                    <p>Zarcero</p>
+                    </div>
+                </div>
+                <label id="lbl-dias">Days</label>
+                <div class="cb-dias">
+                    <label><input type="checkbox" checked>Mon</label>
+                    <label><input type="checkbox" checked>Tue</label>
+                    <label><input type="checkbox">Wed</label>
+                    <label><input type="checkbox" checked>Thu</label>
+                    <label><input type="checkbox">Fri</label>
+                    <label><input type="checkbox">Sat</label>
+                    <label><input type="checkbox" checked>Sun</label>
+                </div>
+                <div class="informacion">
+                    <label>Time</label>
+                    <p>13:30 pm</p>
+                    <label>Seats</label>
+                    <p>1</p>
+                    <label>Fee</label>
+                    <p>--</p>
+                </div>
+                <div>
+                    <label>Vehicle Details</label>
+                    <div class="datos-vehiculo">
+                        <label>Make</label>
+                        <p>Ford</p>
+                        <label>Model</label>
+                        <p>Festiva</p>
+                        <label>Year</label>
+                        <p>1900</p>
+                    </div>
+                </div>
+                <div class="acciones-form">
+                    <a href="../search_ride.html" class="cancelar">Cancel</a>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>    
+    <footer>
+        <a href="../search_ride.html">Home</a> |
+        <a href="../my_rides.html">Rides</a> |
+        <a href="../bookings.html">Bookings</a> |
+        <a href="../edit_profile.html">Settings</a> |
+        <a href="../../index.html">Login</a> |
+        <a href="../user_reg.html">Register</a>
+        <p>&copy; Aventones.com</p>
+    </footer>
+</body>
+</html>

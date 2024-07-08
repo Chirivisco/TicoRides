@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rides</title>
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_shared.css">
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_my_rides.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Proyecto-1/iconos/icono_aventones.png" alt="Car Icon">
+            <h1>AVENTONES</h1>
+        </div>
+        <div class="contenido-encabezado">
+            <nav>
+                <ul>
+                    <li><a href="../search_ride.html">Home</a></li>
+                    <li><a href="../my_rides.html" class="active">Rides</a></li>
+                    <li><a href="../bookings.html">Bookings</a></li>
+                </ul>
+            </nav>
+            <div class="campo-busqueda">
+                <input type="text" placeholder="Search...">
+                <div class="perfil-usuario">
+                    <img src="/Proyecto-1/iconos/profile_picture.png" alt="Icono de perfil">
+                    <div class="menu-perfil">
+                        <a href="../index.html">Logout</a>
+                        <a href="/Proyecto-1/pantallas/edit_profile.html">Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="contenido-main">
+            <h2>My rides</h2>
+            <hr>
+            <a class="btn-nuevo-viaje" href="/Proyecto-1/pantallas/new_ride.html">New Ride</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Seats</th>
+                        <th>Car</th>
+                        <th>Fee</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">Quesada</a></td>
+                        <td>Naranjo</td>
+                        <td>1</td>
+                        <td>Toyota Corolla 2020</td>
+                        <td>$10</td>
+                        <td><a href="/Proyecto-1/pantallas/edited_rides/edit_ride_2.html">Edit</a> | <a href="/Proyecto-1/pantallas/deleted_rides/del_ride_2.html">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Aguas Zarcas</a></td>
+                        <td>Naranjo</td>
+                        <td>1</td>
+                        <td>Ford Festiva 1990</td>
+                        <td>--</td>
+                        <td><a href="/Proyecto-1/pantallas/edited_rides/edit_ride_3.html">Edit</a> | <a href="/Proyecto-1/pantallas/deleted_rides/del_ride_3.html">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <a href="../search_ride.html">Home</a> |
+        <a href="../my_rides.html">Rides</a> |
+        <a href="../bookings.html">Bookings</a> |
+        <a href="../edit_profile.html">Settings</a> |
+        <a href="../../index.html">Login</a> |
+        <a href="../pantallas/user_reg.html">Register</a>
+        <p>&copy; Aventones.com</p>
+    </footer>
+</body>
+</html>
