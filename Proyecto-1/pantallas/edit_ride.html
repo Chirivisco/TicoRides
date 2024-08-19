@@ -41,35 +41,35 @@
                 <div class="grupo-formularios">
                     <div class="formulario">
                         <label for="departure">Departure from</label>
-                        <input type="text" id="departure" value="Quesada">
+                        <input type="text" id="departure" name="departure" placeholder="Enter departure location">
                     </div>
                     <div class="formulario">
                         <label for="arrival">Arrive To</label>
-                        <input type="text" id="arrival" value="Zarcero">
+                        <input type="text" id="arrival" name="arrival" placeholder="Enter arrival location">
                     </div>
                 </div>
                 <label>Days</label>
                 <div class="cb-dias">
-                    <input type="checkbox" id="mon" checked> Mon
-                    <input type="checkbox" id="tue"> Tue
-                    <input type="checkbox" id="wed"> Wed
-                    <input type="checkbox" id="thu"> Thu
-                    <input type="checkbox" id="fri" checked> Fri
-                    <input type="checkbox" id="sat"> Sat
-                    <input type="checkbox" id="sun"> Sun
+                    <input type="checkbox" id="mon" name="days" value="Mon"> Mon
+                    <input type="checkbox" id="tue" name="days" value="Tue"> Tue
+                    <input type="checkbox" id="wed" name="days" value="Wed"> Wed
+                    <input type="checkbox" id="thu" name="days" value="Thu"> Thu
+                    <input type="checkbox" id="fri" name="days" value="Fri"> Fri
+                    <input type="checkbox" id="sat" name="days" value="Sat"> Sat
+                    <input type="checkbox" id="sun" name="days" value="Sun"> Sun
                 </div>
                 <div class="grupo-formularios">
                     <div class="formulario">
                         <label for="tiempo">Time</label>
-                        <input type="time" id="tiempo" value="10:00">
+                        <input type="time" id="tiempo" name="time">
                     </div>
                     <div class="formulario">
                         <label for="asientos">Seats</label>
-                        <input type="number" id="asientos" value="2" min="1">
+                        <input type="number" id="asientos" name="seats" min="1">
                     </div>
                     <div class="formulario">
                         <label for="fee">Fee</label>
-                        <input type="number" id="fee" value="15" min="0">
+                        <input type="number" id="fee" name="fee" min="0">
                     </div>
                 </div>
                 <div class="detalles-vehiculo">
@@ -77,25 +77,25 @@
                     <div class="grupo-formularios">
                         <div class="formulario">
                             <label for="marca">Make</label>
-                            <select id="marca">
-                                <option value="Nissan" selected>Nissan</option>
+                            <select id="marca" name="make">
+                                <option value="Nissan">Nissan</option>
                                 <option value="Toyota">Toyota</option>
                                 <option value="Ford">Ford</option>
                             </select>
                         </div>
                         <div class="formulario">
                             <label for="modelo">Model</label>
-                            <input type="text" id="modelo" value="Pathfinder">
+                            <input type="text" id="modelo" name="model" placeholder="Enter vehicle model">
                         </div>
                         <div class="formulario">
                             <label for="ano">Year</label>
-                            <input type="number" id="ano" value="2015" min="1900" max="2024">
+                            <input type="number" id="ano" name="year" min="1900" max="2024" placeholder="Enter vehicle year">
                         </div>
                     </div>
                 </div>
                 <div class="acciones-form">
-                    <a href="../my_rides.html" class="cancelar">Cancel</a>
-                    <button type="submit">Save</button>
+                    <a href="../pantallas/my_rides.html" class="cancelar">Cancel</a>
+                    <button id="edit-ride-btn" type="button">Save</button>
                 </div>
             </form>
         </div>
@@ -109,5 +109,10 @@
         <a href="../pantallas/user_reg.html">Register</a>
         <p>&copy; Aventones.com</p>
     </footer>
+    <script src="/Proyecto-1/js/rides_functionality.js"></script>
+    <script>
+        loadRide();
+        bindEvents();
+    </script>
 </body>
 </html>
