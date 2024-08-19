@@ -16,7 +16,6 @@
         <div class="contenido-encabezado">
             <nav>
                 <ul>
-                    <li><a href="../pantallas/search_ride.html">Home</a></li>
                     <li><a href="../pantallas/my_rides.html" class="active">Rides</a></li>
                     <li><a href="../pantallas/bookings.html">Bookings</a></li>
                 </ul>
@@ -95,13 +94,13 @@
                 </div>
                 <div class="acciones-form">
                     <a href="../pantallas/my_rides.html" class="cancelar">Cancel</a>
-                    <button type="submit">Create</button>
+                    <button type="button" id="create-ride-btn">Create</button>
                 </div>
             </form>
         </div>
     </main>
     <footer>
-        <a href="../pantallas/search_ride.html">Home</a> |
+        <a href="#">Home</a> |
         <a href="../pantallas/my_rides.html">Rides</a> |
         <a href="../pantallas/bookings.html">Bookings</a> |
         <a href="../pantallas/edit_profile.html">Settings</a> |
@@ -109,5 +108,9 @@
         <a href="../pantallas/user_reg.html">Register</a>
         <p>&copy; Aventones.com</p>
     </footer>
+    <script src="/Proyecto-1/js/rides_functionality.js"></script>
+    <script>
+        bindEvents();
+    </script>
 </body>
 </html>

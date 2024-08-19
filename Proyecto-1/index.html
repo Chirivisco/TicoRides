@@ -30,7 +30,8 @@
                 <div class="links">
                     <p>Not an user? <a href="/Proyecto-1/pantallas/user_reg.html">Register Now</a></p>
                 </div>
-                <a class="login-btn" href="/Proyecto-1/pantallas/my_rides.html">Login</a>
+                <!-- <a class="login-btn" href="/Proyecto-1/pantallas/my_rides.html">Login</a> -->
+                <button id="login-btn" type="button">Login</button>
             </form>
         </div>
     </div>
@@ -43,5 +44,10 @@
         <a href="../pantallas/user_reg.html">Register</a>
         <p>&copy; Aventones.com</p>
     </footer>
+    <script src="/Proyecto-1/js/user_functionality.js"></script>
+    <script>
+        clearLoggedInUser();
+        bindEvents();
+    </script>
 </body>
 </html>

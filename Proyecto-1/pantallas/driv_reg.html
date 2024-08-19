@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Registration</title>
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_reg.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <header>
+            <img id="icono_main" src="/Proyecto-1/iconos/icono_aventones.png" alt="icono_aventones">
+            <h1>AVENTONES</h1>
+        </header>
+        <h2>Driver Registration</h2>
+        <form>
+            <div class="datos-form">
+                <input type="text" id="first-name" placeholder="First Name">
+                <input type="text" id="last-name" placeholder="Last Name">
+            </div>
+            <div class="datos-form">
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div class="datos-form">
+                <input type="password" id="password" placeholder="Password">
+                <input type="password" id="repeat-password" placeholder="Repeat Password">
+            </div>
+            <div class="datos-form">
+                <input type="text" id="address" placeholder="Address">
+            </div>
+            <div class="datos-form">
+                <select id="paises">
+                    <option value="" disabled selected>Country</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="CostaRica">Costa Rica</option>
+                    <option value="Peru">Perú</option>
+                </select>
+                <input type="text" id="state" placeholder="State">
+            </div>
+            <div class="datos-form">
+                <input type="text" id="city" placeholder="City">
+                <input type="text" id="phone-number" placeholder="Phone Number">
+            </div>
+            <div class="datos-form">
+                <input type="text" id="brand-car" placeholder="Brand Car">
+                <input type="text" id="model-car" placeholder="Model Car">
+            </div>
+            <div class="datos-form">
+                <input type="text" id="year-car" placeholder="Year">
+                <input type="text" id="number-plate" placeholder="Number Plate">
+            </div>
+            <div class="links">
+                <p>Already a driver? <a href="../index.html">Login here</a></p>
+                <p>Register as user? <a href="../pantallas/user_reg.html">Click here</a></p>
+            </div>
+            <button id="btn-registrar-driver" type="button">Sign up</button>
+        </form>
+    </div>
+    <footer>
+        <a href="../pantallas/search_ride.html">Home</a> |
+        <a href="../pantallas/my_rides.html">Rides</a> |
+        <a href="../pantallas/bookings.html">Bookings</a> |
+        <a href="../pantallas/edit_profile.html">Settings</a> |
+        <a href="../index.html">Login</a> |
+        <a href="../pantallas/driver_reg.html">Register as Driver</a>
+        <p>&copy; Aventones.com</p>
+    </footer>
+    <!-- Acá se puede agregar el script también -->
+    <script src="/Proyecto-1/js/user_functionality.js"></script>
+    <script>
+        bindEvents();
+      </script>
+</body>
+</html>

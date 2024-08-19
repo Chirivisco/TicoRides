@@ -34,6 +34,8 @@
                     <option value="USA">USA</option>
                     <option value="Canada">Canada</option>
                     <option value="Mexico">Mexico</option>
+                    <option value="CostaRica">Costa Rica</option>
+                    <option value="Peru">Perú</option>
                 </select>
                 <input type="text" id="state" placeholder="State">
             </div>
@@ -43,9 +45,9 @@
             </div>
             <div class="links">
                 <p>Already an user? <a href="../index.html">Login here</a></p>
-                <p>Register as driver? <a href="#">Click here</a></p>
+                <p>Register as driver? <a href="../pantallas/driv_reg.html">Click here</a></p>
             </div>
-            <button type="submit">Sign up</button>
+            <button id="btn-registrar" type="button">Sign up</button>
         </form>
     </div>
     <footer>
@@ -57,5 +59,10 @@
         <a href="../pantallas/user_reg.html">Register</a>
         <p>&copy; Aventones.com</p>
     </footer>
+    <!-- Acá se puede agregar el script también -->
+    <script src="/Proyecto-1/js/user_functionality.js"></script>
+    <script>
+        bindEvents();
+    </script>
 </body>
 </html>

@@ -16,13 +16,13 @@
         <div class="contenido-encabezado">
             <nav>
                 <ul>
-                    <li><a href="../pantallas/search_ride.html">Home</a></li>
-                    <li><a href="../pantallas/my_rides.html" class="active">Rides</a></li>
+                    <li><a href="../pantallas/my_rides.html" class="active">Dashboard</a></li>
                     <li><a href="../pantallas/bookings.html">Bookings</a></li>
+                    <li><a href="../pantallas/edit_profile.html">Settings</a></li>
                 </ul>
             </nav>
             <div class="campo-busqueda">
-                <input type="text" placeholder="Search...">
+                <input id="barra-busqueda" type="text" placeholder="Search...">
                 <div class="perfil-usuario">
                     <img src="/Proyecto-1/iconos/profile_picture.png" alt="Icono de perfil">
                     <div class="menu-perfil">
@@ -35,51 +35,41 @@
     </header>
     <main>
         <div class="contenido-main">
-            <h2>My rides</h2>
-            <hr>
-            <a class="btn-nuevo-viaje" href="/Proyecto-1/pantallas/new_ride.html">New Ride</a>
-            <table>
-                <thead>
-                    <tr>
-                        <th>From</th>
-                        <th>To</th>
-                        <th>Seats</th>
-                        <th>Car</th>
-                        <th>Fee</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="#">Quesada</a></td>
-                        <td>Alajuela</td>
-                        <td>2</td>
-                        <td>Nissan Pathfinder 2015</td>
-                        <td>$5</td>
-                        <td><a href="/Proyecto-1/pantallas/edited_rides/edit_ride_1.html">Edit</a> | <a href="/Proyecto-1/pantallas/deleted_rides/del_ride_1.html">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">Quesada</a></td>
-                        <td>Naranjo</td>
-                        <td>1</td>
-                        <td>Toyota Corolla 2020</td>
-                        <td>$10</td>
-                        <td><a href="/Proyecto-1/pantallas/edited_rides/edit_ride_2.html">Edit</a> | <a href="/Proyecto-1/pantallas/deleted_rides/del_ride_2.html">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">Aguas Zarcas</a></td>
-                        <td>Naranjo</td>
-                        <td>1</td>
-                        <td>Ford Festiva 1990</td>
-                        <td>--</td>
-                        <td><a href="/Proyecto-1/pantallas/edited_rides/edit_ride_3.html">Edit</a> | <a href="/Proyecto-1/pantallas/deleted_rides/del_ride_3.html">Delete</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="responsive-2">
+                <h2 id="menu-selec">Dashboard</h2>
+                <div id="welcome-user">
+                    <p id="welcome-user-p">Welcome</p>
+                    <img src="/Proyecto-1/iconos/profile_picture.png" width="20px" height="20px" alt="Icono de perfil">
+                </div>
+            </div>
+            <h2 id="my-rides">My rides</h2>
+            <div id="responsive-1">
+                <div class="responsive-2" id="encabezado-responsive">
+                    <h3>Your current list of Rides</h3>
+                    <button id="crear-ride-responsive" type="button">+</button>
+                </div>
+                <hr>
+                <a id="btn-nuevo-viaje" href="/Proyecto-1/pantallas/new_ride.html">New Ride</a>
+                <table id="tbl-rides">
+                    <thead>
+                        <tr>
+                            <th class="tbl-from">From</th>
+                            <th class="tbl-to">To</th>
+                            <th class="tbl-seats">Seats</th>
+                            <th class="tbl-car">Car</th>
+                            <th class="tbl-fee">Fee</th>
+                            <th class="tbl-actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rides">
+                        <!-- Acá irían los rides creados -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
     <footer>
-        <a href="../pantallas/search_ride.html">Home</a> |
+        <a href="#">Home</a> |
         <a href="../pantallas/my_rides.html">Rides</a> |
         <a href="../pantallas/bookings.html">Bookings</a> |
         <a href="../pantallas/edit_profile.html">Settings</a> |
@@ -87,5 +77,12 @@
         <a href="../pantallas/user_reg.html">Register</a>
         <p>&copy; Aventones.com</p>
     </footer>
+    <script src="/Proyecto-1/js/rides_functionality.js"></script>
+    <script src="/Proyecto-1/js/user_functionality.js"></script>
+    <script>
+        loadRides();
+        welcomeMessage();
+        bindEvents();
+    </script>
 </body>
 </html>

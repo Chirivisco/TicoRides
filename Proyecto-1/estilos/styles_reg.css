@@ -1,4 +1,4 @@
-/*ESTILOS DEL REGISTRO DE USUARIOS*/
+/* ESTILOS DEL REGISTRO DE USUARIOS */
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
@@ -26,14 +26,14 @@ header {
     display: flex;
     place-items: center;
     margin-bottom: 25px;
-}   
+}
 
 header img {
     width: 40px;
     height: 40px;
 }
 
-header h2 {
+header h1 {
     font-weight: lighter;
 }
 
@@ -117,4 +117,76 @@ footer a:hover {
 footer p {
     margin-top: 10px;
     color: #777;
+}
+
+/* Media Queries for responsive design */
+
+/* Tablet (iPad Pro) */
+@media screen and (max-width: 1024px) {
+    .contenedor-principal {
+        width: 450px;
+    }
+
+    header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    .datos-form {
+        flex-direction: column;
+    }
+
+    .datos-form input, .datos-form select {
+        width: 100%;
+    }
+
+    .links {
+        flex-direction: column;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .links a {
+        margin: 5px 0;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 768px) {
+    .contenedor-principal {
+        width: 300px;
+    }
+
+    header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .datos-form {
+        flex-direction: column;
+    }
+
+    .datos-form input, .datos-form select {
+        width: 100%;
+    }
+
+    .links {
+        flex-direction: column;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .links a {
+        margin: 5px 0;
+    }
 }
