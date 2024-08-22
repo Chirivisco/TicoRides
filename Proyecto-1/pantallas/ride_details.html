@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Ride</title>
+    <title>Ride details</title>
     <link rel="stylesheet" href="/Proyecto-1/estilos/styles_shared.css">
     <link rel="stylesheet" href="/Proyecto-1/estilos/styles_ride_details.css">
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -16,7 +18,7 @@
         <div class="contenido-encabezado">
             <nav>
                 <ul>
-                    <li><a href="../search_ride.html" class="active">Home</a></li>
+                    <li><a href="../pantallas/search_ride.html" class="active">Home</a></li>
                 </ul>
             </nav>
             <div class="campo-busqueda">
@@ -35,7 +37,7 @@
         <div class="contenido-principal">
             <!-- VISTA DE PC -->
             <div id="form-responsive-1">
-                <h2 id="titulo-ride"></h2>
+                <h2 class="titulo-ride"></h2>
                 <!-- Estructura del titulo: 'Departure' - 'Arrival' -->
                 <hr>
                 <div class="perfil">
@@ -45,23 +47,23 @@
                 <form>
                     <div id="ruta">
                         <div>
-                        <label>Departure from</label>
-                        <p class="departure"></p>
+                            <label>Departure from</label>
+                            <p class="departure"></p>
                         </div>
                         <div>
-                        <label>Arrive To</label>
-                        <p class="arrive"></p>
+                            <label>Arrive To</label>
+                            <p class="arrive"></p>
                         </div>
                     </div>
-                    <label id="lbl-dias">Days</label>
+                    <label class="lbl-dias">Days</label>
                     <div class="cb-dias">
-                        <label><input type="checkbox">Mon</label>
-                        <label><input type="checkbox">Tue</label>
-                        <label><input type="checkbox">Wed</label>
-                        <label><input type="checkbox">Thu</label>
-                        <label><input type="checkbox">Fri</label>
-                        <label><input type="checkbox">Sat</label>
-                        <label><input type="checkbox">Sun</label>
+                        <label><input type="checkbox" name="days" value="mon" disabled>Mon</label>
+                        <label><input type="checkbox" name="days" value="tue" disabled>Tue</label>
+                        <label><input type="checkbox" name="days" value="wed" disabled>Wed</label>
+                        <label><input type="checkbox" name="days" value="thu" disabled>Thu</label>
+                        <label><input type="checkbox" name="days" value="fri" disabled>Fri</label>
+                        <label><input type="checkbox" name="days" value="sat" disabled>Sat</label>
+                        <label><input type="checkbox" name="days" value="sun" disabled>Sun</label>
                     </div>
                     <div class="informacion">
                         <label>Time</label>
@@ -84,7 +86,7 @@
                     </div>
                     <div class="acciones-form">
                         <a href="../pantallas/search_ride.html" class="cancelar">Cancel</a>
-                        <button id="request" type="button">Submit</button>
+                        <button class="request" type="button">Submit</button>
                     </div>
                 </form>
             </div>
@@ -93,13 +95,14 @@
             <div id="form-responsive-2">
                 <h2 id="main-title-responsive">Welcome to TicoRides.com</h2>
                 <div class="responsive-2">
-                    <h2 id="menu-selec">Search for a ride</h2>
+                    <h2 id="menu-selec">Ride details</h2>
                     <div class="welcome-user">
                         <p class="welcome-user-p">Welcome</p>
-                        <img src="/Proyecto-1/iconos/profile_picture.png" width="20px" height="20px" alt="Icono de perfil">
+                        <img src="/Proyecto-1/iconos/profile_picture.png" width="20px" height="20px"
+                            alt="Icono de perfil">
                     </div>
                 </div>
-                <h2 id="titulo-ride"></h2>
+                <h2 class="titulo-ride"></h2>
                 <!-- Estructura del titulo: 'Departure' - 'Arrival' -->
                 <hr>
                 <div class="perfil">
@@ -109,23 +112,23 @@
                 <form>
                     <div id="ruta">
                         <div>
-                        <label>Departure from</label>
-                        <p class="departure"></p>
+                            <label>Departure from</label>
+                            <p class="departure"></p>
                         </div>
                         <div>
-                        <label>Arrive To</label>
-                        <p class="arrive"></p>
+                            <label>Arrive To</label>
+                            <p class="arrive"></p>
                         </div>
                     </div>
-                    <label id="lbl-dias">Days</label>
+                    <label class="lbl-dias">Days</label>
                     <div class="cb-dias">
-                        <label><input type="checkbox">Mon</label>
-                        <label><input type="checkbox">Tue</label>
-                        <label><input type="checkbox">Wed</label>
-                        <label><input type="checkbox">Thu</label>
-                        <label><input type="checkbox">Fri</label>
-                        <label><input type="checkbox">Sat</label>
-                        <label><input type="checkbox">Sun</label>
+                        <label><input type="checkbox" name="days" value="mon" disabled>Mon</label>
+                        <label><input type="checkbox" name="days" value="tue" disabled>Tue</label>
+                        <label><input type="checkbox" name="days" value="wed" disabled>Wed</label>
+                        <label><input type="checkbox" name="days" value="thu" disabled>Thu</label>
+                        <label><input type="checkbox" name="days" value="fri" disabled>Fri</label>
+                        <label><input type="checkbox" name="days" value="sat" disabled>Sat</label>
+                        <label><input type="checkbox" name="days" value="sun" disabled>Sun</label>
                     </div>
                     <div class="informacion">
                         <label>Time</label>
@@ -138,22 +141,28 @@
                     <div>
                         <label>Vehicle Details</label>
                         <div class="datos-vehiculo">
-                            <label>Make</label>
-                            <p class="make"></p>
-                            <label>Model</label>
-                            <p class="model"></p>
-                            <label>Year</label>
-                            <p class="year"></p>
+                            <div class="dato-vehiculo">
+                                <label>Make</label>
+                                <p class="make"></p>
+                            </div>
+                            <div class="dato-vehiculo">
+                                <label>Model</label>
+                                <p class="model"></p>
+                            </div>
+                            <div class="dato-vehiculo">
+                                <label>Year</label>
+                                <p class="year"></p>
+                            </div>
                         </div>
                     </div>
                     <div class="acciones-form">
                         <a href="../pantallas/search_ride.html" class="cancelar">Cancel</a>
-                        <button id="request-responsive" type="button">Submit</button>
+                        <button class="request" type="button">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
-    </main>    
+    </main>
     <footer>
         <a href="../search_ride.html">Home</a> |
         <a href="#">Rides</a> |
@@ -171,4 +180,5 @@
         bindEvents();
     </script>
 </body>
+
 </html>

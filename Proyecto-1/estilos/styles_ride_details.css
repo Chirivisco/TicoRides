@@ -58,7 +58,7 @@ form {
     justify-content: space-between;
 }
 
-.informacion label, #ruta label, label#lbl-dias {
+.informacion label, #ruta label, label.lbl-dias {
     font-weight: bold;
 }
 
@@ -134,15 +134,152 @@ form {
         display: none;
     }
 
+    div.logo {
+        margin-bottom: 0;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
     #form-responsive-2 {
         display: block;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 20px;
     }
 
     h2#main-title-responsive {
-        font-size: 20px;
+        font-size: 24px;
         font-weight: bold;
-        display: grid;
-        justify-items: start;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    h2#menu-selec {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    h2.titulo-ride {
+        font-size: 20px;
+        margin: 20px 0 15px;
+    }
+
+    div.responsive-2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-bottom: 20px;
+    }
+
+    .perfil {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .perfil img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .perfil p.driver {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #ruta {
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    #ruta div {
+        display: block;
+    }
+
+    #ruta label, p, label.lbl-dias {
+        justify-content: center;
+        display: flex;
+    }
+
+    #ruta label {
+        font-weight: bold;
+    }
+
+    label.lbl-dias {
+        margin: 20px 0;
+    }
+
+    .cb-dias {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .cb-dias label {
+        flex: 1 1 calc(33.333% - 10px);
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .informacion {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 25px;
+    }
+
+    .informacion label {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .informacion p {
+        font-size: 16px;
+    }
+
+    .datos-vehiculo {
+        display: flex;
+    }
+
+    .datos-vehiculo label {
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .datos-vehiculo p {
+        font-size: 16px;
+    }
+
+    .acciones-form {
+        margin-top: 30px;
+    }
+
+    .acciones-form .cancelar {
+        background-color: #dc3545;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .acciones-form button.request {
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .acciones-form button#request-responsive:hover,
+    .acciones-form .cancelar:hover {
+        opacity: 0.8;
     }
 }

@@ -172,11 +172,60 @@ function loadRide() {
         document.getElementById('arrival-responsive').value = infoRide.arrival;
         document.getElementById('time-start').value = infoRide.time;
 
-        //infoRide.days.forEach(day => {
-        //    document.getElementById(day + '-responsive').checked = true;
-        //});
     } else if (window.location.pathname.includes('ride_details.html')) {
-        
+        const rideId = parseInt(rideID());
+
+        const rides = JSON.parse(localStorage.getItem('rides')) || [];
+        const drivers = JSON.parse(localStorage.getItem('drivers')) || [];
+
+        // filtra de los rides, el que se va a mostrar
+        const infoRide = rides.find(ride => ride.id === rideId);
+
+        let driverName = 'Unknown';
+
+        // obtiene el nombre del conductor del ride según su id.
+        for (let i = 0; i < drivers.length; i++) {
+            if (drivers[i].id === infoRide.driverId) {
+                driverName = drivers[i].firstName;
+                break;
+            }
+        }
+
+        // carga los datos del ride en la vista de PC
+        document.querySelector('#form-responsive-1 .titulo-ride').textContent = infoRide.departure + " - " + infoRide.arrival;
+        document.querySelector('#form-responsive-1 .driver').textContent = driverName;
+        document.querySelector('#form-responsive-1 .departure').textContent = infoRide.departure;
+        document.querySelector('#form-responsive-1 .arrive').textContent = infoRide.arrival;
+        document.querySelector('#form-responsive-1 .time').textContent = infoRide.time;
+        document.querySelector('#form-responsive-1 .seats').textContent = infoRide.seats;
+        document.querySelector('#form-responsive-1 .fee').textContent = infoRide.fee;
+        document.querySelector('#form-responsive-1 .make').textContent = infoRide.vehicle.make;
+        document.querySelector('#form-responsive-1 .model').textContent = infoRide.vehicle.model;
+        document.querySelector('#form-responsive-1 .year').textContent = infoRide.vehicle.year;
+
+        // carga los datos del ride en la vista responsive
+        document.querySelector('#form-responsive-2 .titulo-ride').textContent = infoRide.departure + " - " + infoRide.arrival;
+        document.querySelector('#form-responsive-2 .driver').textContent = driverName;
+        document.querySelector('#form-responsive-2 .departure').textContent = infoRide.departure;
+        document.querySelector('#form-responsive-2 .arrive').textContent = infoRide.arrival;
+        document.querySelector('#form-responsive-2 .time').textContent = infoRide.time;
+        document.querySelector('#form-responsive-2 .seats').textContent = infoRide.seats;
+        document.querySelector('#form-responsive-2 .fee').textContent = infoRide.fee;
+        document.querySelector('#form-responsive-2 .make').textContent = infoRide.vehicle.make;
+        document.querySelector('#form-responsive-2 .model').textContent = infoRide.vehicle.model;
+        document.querySelector('#form-responsive-2 .year').textContent = infoRide.vehicle.year;
+
+        // marca los días del ride en el html
+        infoRide.days.forEach(day => {
+            const dayCheckbox1 = document.querySelector(`#form-responsive-1 input[value="${day.toLowerCase()}"]`);
+            if (dayCheckbox1) {
+                dayCheckbox1.checked = true;
+            }
+            const dayCheckbox2 = document.querySelector(`#form-responsive-2 input[value="${day.toLowerCase()}"]`);
+            if (dayCheckbox2) {
+                dayCheckbox2.checked = true;
+            }
+        });
     }
 }
 
@@ -288,7 +337,7 @@ function loadLocations() {
         departureSelect2.innerHTML = '';
         arrivalSelect2.innerHTML = '';
 
-        // Agrega las opciones de departure a ambos selects
+        // agrega las opciones de departure a ambos selects
         departureList.forEach(departure => {
             const option1 = document.createElement('option');
             option1.value = departure;
@@ -300,7 +349,7 @@ function loadLocations() {
             departureSelect2.appendChild(option2);
         });
 
-        // Agrega las opciones de arrival a ambos selects
+        // agrega las opciones de arrival a ambos selects
         arrivalList.forEach(arrival => {
             const option1 = document.createElement('option');
             option1.value = arrival;
@@ -468,6 +517,34 @@ function loadFilteredRides() {
     });
 }
 
+// Método que almacena una solicitud a un ride
+function requestRide() {
+    // obtiene el id del ride desde la URL
+    const params = new URLSearchParams(window.location.search);
+    const rideId = parseInt(params.get('r'), 10);
+
+    // obtiene el usuario logueado 
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    // crea la lista de solicitudes de rides en el localstorage
+    let rideRequests = JSON.parse(localStorage.getItem('rideRequests')) || [];
+
+    const request = {
+        userId: loggedInUser.id,
+        rideId: rideId
+    };
+
+    // agrega la nueva solicitud a la lista
+    rideRequests.push(request);
+
+    // guarda la lista actualizada de solicitudes en el localStorage
+    localStorage.setItem('rideRequests', JSON.stringify(rideRequests));
+
+    alert('Se ha enviado solicitud de ride');
+}
+
+
+
 function bindEvents() {
     // Evento de crear rides en la vista de PC
     const createRideButton = document.getElementById('create-ride-btn');
@@ -513,6 +590,14 @@ function bindEvents() {
     if (searchRideResponsiveButton) {
         searchRideResponsiveButton.addEventListener('click', searchRideButtonHandler);
     }
+
+    // Evento para solicitar ride
+    const requestRideButtons = document.getElementsByClassName('request');
+    if (requestRideButtons) {
+        for (let i = 0; i < requestRideButtons.length; i++) {
+            requestRideButtons[i].addEventListener('click', requestRideButtonHandler);
+        }
+    }
 }
 
 function createRideButtonHandler(e) {
@@ -529,6 +614,10 @@ function searchRideButtonHandler() {
 
 function clearFilterButtonHandler() {
     loadAllRides();
+}
+
+function requestRideButtonHandler() {
+    requestRide();
 }
 
 // ejecuta los bindEvents después de que se ejecutó todo el DOM.
