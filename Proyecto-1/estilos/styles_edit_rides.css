@@ -102,4 +102,67 @@ form {
     color: #0675b1;
 }
 
+div.responsive-2 {
+    display: none;
+}
 
+#form-responsive-2{
+    display: none;
+}
+
+@media (max-width: 1024px) and (min-width: 380px) { 
+    div.responsive-2 {
+        display: flex;
+    }
+
+    div.contenido-principal h2.menu-titulo, hr.linea-menu-titulo, #form-responsive-1{
+        display: none;
+    }
+
+    div.contenido-principal {
+        padding: 10px;  
+    }
+
+    #form-responsive-2 {
+        display: block;
+        margin: 0 30px;
+    }
+
+    .grupo-formularios {
+        gap: 0;
+        margin: 20px 0;
+    }
+
+    #form-solo {
+        width: 100%;
+    }
+
+    input#description {
+        height: 70px;
+    }
+
+    hr#linea-responsive-2 {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    #info-tiempo {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #info-tiempo #departure-arrival .formulario {
+        margin-bottom: 10px;
+    }
+
+    .cb-dias {
+        display: grid;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .cb-dias .dia {
+        display: flex;
+        margin: 5px 0;
+    }
+}

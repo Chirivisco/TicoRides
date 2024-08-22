@@ -120,3 +120,29 @@ form {
 .acciones-form .cancelar:hover {
     color: #0675b1;
 }
+
+#form-responsive-1 {
+    display: block;
+}
+
+#form-responsive-2 {
+    display: none;
+}
+
+@media (max-width: 1024px) and (min-width: 380px) {
+    .contenido-encabezado, #form-responsive-1 {
+        display: none;
+    }
+
+    #form-responsive-2 {
+        display: block;
+    }
+
+    h2#main-title-responsive {
+        font-size: 20px;
+        font-weight: bold;
+        display: grid;
+        justify-items: start;
+        margin-bottom: 20px;
+    }
+}

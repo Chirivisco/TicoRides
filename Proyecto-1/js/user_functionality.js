@@ -338,7 +338,7 @@ function clearLoggedInUser() {
 
 // Método para mensaje personalizado en versión responsive.
 function welcomeMessage() {
-    const parrafo = document.querySelector('#welcome-user-p');
+    const parrafo = document.querySelector('.welcome-user-p');
     const loggedUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
     if (!loggedUser) {

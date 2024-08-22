@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Ride</title>
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_shared.css">
+    <link rel="stylesheet" href="/Proyecto-1/estilos/styles_ride_details.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Proyecto-1/iconos/icono_aventones.png" alt="Car Icon">
+            <h1>AVENTONES</h1>
+        </div>
+        <div class="contenido-encabezado">
+            <nav>
+                <ul>
+                    <li><a href="../search_ride.html" class="active">Home</a></li>
+                </ul>
+            </nav>
+            <div class="campo-busqueda">
+                <input type="text" placeholder="Search...">
+                <div class="perfil-usuario">
+                    <img src="/Proyecto-1/iconos/profile_picture.png" alt="Icono de perfil">
+                    <div class="menu-perfil">
+                        <a href="../index.html">Logout</a>
+                        <a href="/Proyecto-1/pantallas/edit_profile.html">Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="contenido-principal">
+            <!-- VISTA DE PC -->
+            <div id="form-responsive-1">
+                <h2 id="titulo-ride"></h2>
+                <!-- Estructura del titulo: 'Departure' - 'Arrival' -->
+                <hr>
+                <div class="perfil">
+                    <img src="/Proyecto-1/iconos/profile_picture.png" alt="Icono de perfil">
+                    <p class="driver"></p>
+                </div>
+                <form>
+                    <div id="ruta">
+                        <div>
+                        <label>Departure from</label>
+                        <p class="departure"></p>
+                        </div>
+                        <div>
+                        <label>Arrive To</label>
+                        <p class="arrive"></p>
+                        </div>
+                    </div>
+                    <label id="lbl-dias">Days</label>
+                    <div class="cb-dias">
+                        <label><input type="checkbox">Mon</label>
+                        <label><input type="checkbox">Tue</label>
+                        <label><input type="checkbox">Wed</label>
+                        <label><input type="checkbox">Thu</label>
+                        <label><input type="checkbox">Fri</label>
+                        <label><input type="checkbox">Sat</label>
+                        <label><input type="checkbox">Sun</label>
+                    </div>
+                    <div class="informacion">
+                        <label>Time</label>
+                        <p class="time"></p>
+                        <label>Seats</label>
+                        <p class="seats"></p>
+                        <label>Fee</label>
+                        <p class="fee"></p>
+                    </div>
+                    <div>
+                        <label>Vehicle Details</label>
+                        <div class="datos-vehiculo">
+                            <label>Make</label>
+                            <p class="make"></p>
+                            <label>Model</label>
+                            <p class="model"></p>
+                            <label>Year</label>
+                            <p class="year"></p>
+                        </div>
+                    </div>
+                    <div class="acciones-form">
+                        <a href="../pantallas/search_ride.html" class="cancelar">Cancel</a>
+                        <button id="request" type="button">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- VISTA RESPONSIVE -->
+            <div id="form-responsive-2">
+                <h2 id="main-title-responsive">Welcome to TicoRides.com</h2>
+                <div class="responsive-2">
+                    <h2 id="menu-selec">Search for a ride</h2>
+                    <div class="welcome-user">
+                        <p class="welcome-user-p">Welcome</p>
+                        <img src="/Proyecto-1/iconos/profile_picture.png" width="20px" height="20px" alt="Icono de perfil">
+                    </div>
+                </div>
+                <h2 id="titulo-ride"></h2>
+                <!-- Estructura del titulo: 'Departure' - 'Arrival' -->
+                <hr>
+                <div class="perfil">
+                    <img src="/Proyecto-1/iconos/profile_picture.png" alt="Icono de perfil">
+                    <p class="driver"></p>
+                </div>
+                <form>
+                    <div id="ruta">
+                        <div>
+                        <label>Departure from</label>
+                        <p class="departure"></p>
+                        </div>
+                        <div>
+                        <label>Arrive To</label>
+                        <p class="arrive"></p>
+                        </div>
+                    </div>
+                    <label id="lbl-dias">Days</label>
+                    <div class="cb-dias">
+                        <label><input type="checkbox">Mon</label>
+                        <label><input type="checkbox">Tue</label>
+                        <label><input type="checkbox">Wed</label>
+                        <label><input type="checkbox">Thu</label>
+                        <label><input type="checkbox">Fri</label>
+                        <label><input type="checkbox">Sat</label>
+                        <label><input type="checkbox">Sun</label>
+                    </div>
+                    <div class="informacion">
+                        <label>Time</label>
+                        <p class="time"></p>
+                        <label>Seats</label>
+                        <p class="seats"></p>
+                        <label>Fee</label>
+                        <p class="fee"></p>
+                    </div>
+                    <div>
+                        <label>Vehicle Details</label>
+                        <div class="datos-vehiculo">
+                            <label>Make</label>
+                            <p class="make"></p>
+                            <label>Model</label>
+                            <p class="model"></p>
+                            <label>Year</label>
+                            <p class="year"></p>
+                        </div>
+                    </div>
+                    <div class="acciones-form">
+                        <a href="../pantallas/search_ride.html" class="cancelar">Cancel</a>
+                        <button id="request-responsive" type="button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>    
+    <footer>
+        <a href="../search_ride.html">Home</a> |
+        <a href="#">Rides</a> |
+        <a href="#">Bookings</a> |
+        <a href="#">Settings</a> |
+        <a href="../../index.html">Login</a> |
+        <a href="../user_reg.html">Register</a>
+        <p>&copy; Aventones.com</p>
+    </footer>
+    <script src="/Proyecto-1/js/rides_functionality.js"></script>
+    <script src="/Proyecto-1/js/user_functionality.js"></script>
+    <script>
+        welcomeMessage();
+        loadRide();
+        bindEvents();
+    </script>
+</body>
+</html>

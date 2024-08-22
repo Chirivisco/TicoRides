@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,84 +33,107 @@
         </div>
     </header>
     <main>
-        <div class="contenido-principal">
-            <h2>Search rides</h2>
-            <hr>
-            <div class="filtros-busqueda">
-                <form>
-                    <div class="filtro">
-                        <label for="desde">From</label>
-                        <select id="desde">
-                            <option value="quesada">Quesada</option>
-                            <option value="aguas_zarcas">Aguas Zarcas</option>
-                        </select>
-                        <label for="hasta" class="align-right">To</label>
-                        <select id="hasta">
-                            <option value="zarcero">Zarcero</option>
-                        </select>
-                        <button type="submit">Find rides</button>
-                    </div>
-                    <div class="filtro">
-                        <label>Days</label>
-                        <div class="cb-dias">
-                            <label><input type="checkbox" value="mon" checked>Mon</label>
-                            <label><input type="checkbox" value="tue" checked>Tue</label>
-                            <label><input type="checkbox" value="wed" checked>Wed</label>
-                            <label><input type="checkbox" value="thu" checked>Thu</label>
-                            <label><input type="checkbox" value="fri" checked>Fri</label>
-                            <label><input type="checkbox" value="sat" checked>Sat</label>
-                            <label><input type="checkbox" value="sun" checked>Sun</label>
+        <!-- FORM RESPONSIVE PC -->
+        <div id="form-responsive-1"> 
+            <div class="contenido-principal">
+                <h2>Search rides</h2>
+                <hr>
+                <div class="filtros-busqueda">
+                    <form>
+                        <div class="filtro">
+                            <label for="desde">From</label>
+                            <select id="desde">
+                                <!-- Acá se cargan los lugares disponibles -->
+                            </select>
+                            <label for="hasta" class="align-right">To</label>
+                            <select id="hasta">
+                                <!-- Acá se cargan los lugares disponibles -->
+                            </select>
+                            <button id="search-ride" type="button">Find rides</button>
                         </div>
-                    </div>
-                </form>
+                        <div class="filtro">
+                            <label>Days</label>
+                            <div class="cb-dias">
+                                <label><input type="checkbox" value="mon">Mon</label>
+                                <label><input type="checkbox" value="tue">Tue</label>
+                                <label><input type="checkbox" value="wed">Wed</label>
+                                <label><input type="checkbox" value="thu">Thu</label>
+                                <label><input type="checkbox" value="fri">Fri</label>
+                                <label><input type="checkbox" value="sat">Sat</label>
+                                <label><input type="checkbox" value="sun">Sun</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="lista-rides">
+                    <button class="clear-filter" type="button">Clear filters</button>
+                    <table id="tbl-rides-responsive-1">
+                        <thead>
+                            <tr>
+                                <th>Driver</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Seats</th>
+                                <th>Car</th>
+                                <th>Fee</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <img src="../iconos/map.png" alt="Map" id="mapa">        
             </div>
-            <div class="lista-rides">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Driver</th>
-                            <th>From</th>
-                            <th>To</th>
-                            <th>Seats</th>
-                            <th>Car</th>
-                            <th>Fee</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>barroyo</td>
-                            <td><a href="#">Quesada</a></td>
-                            <td>Alajuela</td>
-                            <td>2</td>
-                            <td>Nissan Pathfinder 2015</td>
-                            <td>$5</td>
-                            <td><a href="../pantallas/ride_details/ride_details_1.html">Request</a></td>
-                        </tr>
-                        <tr>
-                            <td>barroyo</td>
-                            <td><a href="#">Quesada</a></td>
-                            <td>Naranjo</td>
-                            <td>1</td>
-                            <td>Toyota Corolla 2020</td>
-                            <td>$10</td>
-                            <td><a href="../pantallas/ride_details/ride_details_2.html">Request</a></td>
-                        </tr>
-                        <tr>
-                            <td>yluna</td>
-                            <td><a href="#">Aguas Zarcas</a></td>
-                            <td>Naranjo</td>
-                            <td>1</td>
-                            <td>Ford Festiva 1990</td>
-                            <td>--</td>
-                            <td><a href="../pantallas/ride_details/ride_details_3.html">Request</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <img src="../iconos/map.png" alt="Map" id="mapa">        
         </div>
-    </main>    
+
+        <!-- FORM RESPONSIVE SMARTPHONES Y TABLES -->
+        <div id="form-responsive-2">
+            <div class="contenido-principal">
+                <h2 id="main-title-responsive">Welcome to TicoRides.com</h2>
+                <div class="responsive-2">
+                    <h2 id="menu-selec">Search for a ride</h2>
+                    <div class="welcome-user">
+                        <p class="welcome-user-p">Welcome</p>
+                        <img src="/Proyecto-1/iconos/profile_picture.png" width="20px" height="20px" alt="Icono de perfil">
+                    </div>
+                </div>
+                <h2 id="title-menu">Search rides</h2>
+                <hr>
+                <div class="filtros-busqueda">
+                    <form>
+                        <div class="filtro">
+                            <label for="desde">From</label>
+                            <select id="desde-responsive">
+                                <!-- Acá se cargan los lugares disponibles -->
+                            </select>
+                            <label for="hasta" class="align-right">To</label>
+                            <select id="hasta-responsive">
+                                <!-- Acá se cargan los lugares disponibles -->
+                            </select>
+                            <button id="search-ride-responsive" type="button">Find my ride!</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="lista-rides">
+                    <button class="clear-filter" type="button">Clear filters</button>
+                    <table id="tbl-rides-responsive2">
+                        <thead>
+                            <tr>
+                                <th id="driver-responsive">Driver</th>
+                                <th id="from-responsive">From</th>
+                                <th id="to-responsive">To</th>
+                                <th id="view-responsive"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Acá se cargan los rides disponibles -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>    
+    </main>
     <footer>
         <a href="../pantallas/search_ride.html">Home</a> |
         <a href="../pantallas/my_rides.html">Rides</a> |
@@ -119,5 +143,13 @@
         <a href="../pantallas/user_reg.html">Register</a>
         <p>&copy; Aventones.com</p>
     </footer>
+    <script src="/Proyecto-1/js/rides_functionality.js"></script>
+    <script src="/Proyecto-1/js/user_functionality.js"></script>
+    <script>
+        welcomeMessage();
+        loadLocations();
+        loadAllRides();
+        bindEvents();
+    </script>
 </body>
 </html>

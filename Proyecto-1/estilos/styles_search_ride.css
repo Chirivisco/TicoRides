@@ -26,7 +26,7 @@ main {
 }
 
 .filtros-busqueda {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: left;
     border: black solid 1px;
     display: flex;
@@ -43,6 +43,10 @@ main {
 
 .filtro .align-right {
     margin-left: auto;
+}
+
+.filtro select {
+    width: 100px;
 }
 
 .filtros-busqueda .cb-dias {
@@ -83,7 +87,7 @@ main {
     background-color: #f8f8f8;
 }
 
-.lista-rides  td a {
+.lista-rides td a {
     color: #007bff;
     text-decoration: none;
 }
@@ -91,5 +95,88 @@ main {
 #mapa {
     width: 100%;
     height: 300px;
-    object-fit: cover; /* Esto asegurará que la imagen cubra todo el espacio sin distorsionarse */
+    object-fit: cover;
+}
+
+#form-responsive-2,
+div.responsive-2,
+th#view,
+h2#main-title-responsive,
+button#search-ride-responsive {
+    display: none;
+}
+
+.clear-filter {
+    justify-content: start;
+    display: flex;
+    margin: 0 0 15px 0;
+    border: none;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) and (min-width: 380px) {
+    #form-responsive-2 {
+        display: block;
+    }
+
+    #form-responsive-1,
+    .contenido-encabezado,
+    #title-menu,
+    .filtro:last-child,
+    #search-ride,
+    th#seats,
+    th#car,
+    th#fee,
+    th#actions,
+    img#mapa {
+        display: none;
+    }
+
+    h2#menu-selec {
+        font-size: 14px;
+        font-weight: lighter;
+    }
+
+    div.responsive-2 {
+        display: flex;
+    }
+
+    div#form-responsive-2 .filtro {
+        display: flex;
+        font-size: 13px;
+        gap: 15px;
+        margin: 0 10px;
+    }
+
+    .filtro select {
+        font-size: 13px;
+        width: 80px;
+    }
+
+    .filtros-busqueda {
+        padding: 20px 0px;
+    }
+
+    .filtros-busqueda button {
+        padding: 4px 12px;
+        border-radius: 3px;
+    }
+
+    button#search-ride-responsive {
+        display: block;
+    }
+
+    th#view {
+        display: table-cell;
+    }
+
+    h2#main-title-responsive {
+        font-size: 20px;
+        font-weight: bold;
+        display: grid;
+        justify-items: start;
+        margin-bottom: 20px;
+    }
 }

@@ -29,7 +29,7 @@ main {
     width: 170px;
 }
 
-#btn-nuevo-viaje {
+.btn-nuevo-viaje {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -42,7 +42,7 @@ main {
     text-decoration: none;
 }
 
-#btn-nuevo-viaje:hover {
+.btn-nuevo-viaje:hover {
     background-color: #0056b3;
 }
 
@@ -71,7 +71,7 @@ table a:hover {
     text-decoration: underline;
 }
 
-button#crear-ride-responsive {
+a#responsive {
     display: none;
 }
 
@@ -79,69 +79,12 @@ div.responsive-2 h3 {
     display: none;
 }
 
-div#welcome-user {
+div.welcome-user {
     display: none;
 }
 
 /* Responsive para smartphones (430x932) y iPad Pro (1024x1366) */
-@media (max-width: 1024px) and (min-width: 430px) {
-    body, html {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* Evita el deslizamiento lateral */
-    }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0;
-        padding: 0 20px 0;
-        width: 100%; /* Asegura que el header ocupe el ancho completo */
-        display: block;
-    }
-
-    div.logo {
-        text-align: center;
-        width: 100%; /* Asegura que el logo ocupe el ancho completo */
-    }
-
-    div.logo img {
-        width: 50px;
-        height: 50px;
-    }
-
-    div.logo h1 {
-        font-size: 24px;
-    }
-
-    nav {
-        width: 100%; /* Ocupa el ancho completo */
-        text-align: center;
-    }
-
-    nav ul {
-        text-align: center;
-        width: 100%; /* Asegura que la barra de navegación ocupe el ancho completo */
-        padding: 0;
-        margin: 0;
-        border-radius: 10px;
-        background-color: #f8f8f8;
-        display: flex;
-        justify-content: center; /* Centra los elementos del menú */
-    }
-
-    nav ul li {
-        margin: 0 5px;
-    }
-
-    .contenido-encabezado {
-        width: 100%;
-        display: flex;
-        justify-items: start;
-        border-bottom: 0px;
-        margin: 30px 0 0 0;
-    }
-
+@media (max-width: 1024px) and (min-width: 380px) {
     .contenido-main {
         padding: 10px;
         font-size: 14px;
@@ -149,19 +92,10 @@ div#welcome-user {
         box-sizing: border-box;
     }
 
-    .campo-busqueda {
-        display: none;
-    }
-
-    .contenido-main h2, #menu-selec, h3 {
+    .contenido-main h2, #menu-selec {
         display: flex;
         font-size: 18px;
         margin-left: 10px;
-    }
-
-    #menu-selec {
-        font-weight: bold;
-        margin-bottom: 0;
     }
 
     hr {
@@ -170,12 +104,6 @@ div#welcome-user {
 
     h2#my-rides {
         margin-bottom: 15px !important;
-    }
-
-    div#welcome-user {
-        display: flex;
-        gap: 7px;
-        align-items: center;
     }
 
     div#responsive-1 {
@@ -192,18 +120,11 @@ div#welcome-user {
     }
     
 
-    div.responsive-2 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 0 0 15px 0;
-    }
-
     div.responsive-2 #encabezado-responsive {
         margin-bottom: 10px;
     }
 
-    button#crear-ride-responsive {
+    a#responsive {
         display: block;
     }
 
@@ -211,7 +132,7 @@ div#welcome-user {
         display: none;
     }
 
-    #btn-nuevo-viaje {
+    .btn-nuevo-viaje {
         display: none;
     }
 
@@ -228,11 +149,8 @@ div#welcome-user {
         word-wrap: break-word;
     }
 
-    footer {
-        font-size: 12px;
-        text-align: center;
-        padding: 10px 5px;
-        width: 100%;
+    a#responsive {
+        padding: 2px 5px;
+        margin-bottom: 0;
     }
 }
-

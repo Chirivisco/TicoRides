@@ -16,6 +16,7 @@
         <div class="contenido-encabezado">
             <nav>
                 <ul>
+                    <li><a href="../pantallas/my_rides.html">Dashboard</a></li>
                     <li><a href="../pantallas/my_rides.html" class="active">Rides</a></li>
                     <li><a href="../pantallas/bookings.html">Bookings</a></li>
                 </ul>
@@ -34,9 +35,18 @@
     </header>
     <main>
         <div class="contenido-principal">
-            <h2>New Ride</h2>
-            <hr>
-            <form>
+            <div class="responsive-2">
+                <h2 id="menu-selec">Create ride</h2>
+                <div class="welcome-user">
+                    <p class="welcome-user-p">Welcome</p>
+                    <img src="/Proyecto-1/iconos/profile_picture.png" width="20px" height="20px" alt="Icono de perfil">
+                </div>
+            </div>
+            <h2 class="menu-titulo">New Ride</h2>
+            <hr class="linea-menu-titulo">
+
+            <!-- FORM RESPONSIVE PC -->
+            <form id="form-responsive-1">
                 <div class="grupo-formularios">
                     <div class="formulario">
                         <label for="departure">Departure from</label>
@@ -49,11 +59,11 @@
                 </div>
                 <label>Days</label>
                 <div class="cb-dias">
-                    <input type="checkbox" id="mon" name="days" checked> Mon
+                    <input type="checkbox" id="mon" name="days"> Mon
                     <input type="checkbox" id="tue" name="days"> Tue
                     <input type="checkbox" id="wed" name="days"> Wed
                     <input type="checkbox" id="thu" name="days"> Thu
-                    <input type="checkbox" id="fri" name="days" checked> Fri
+                    <input type="checkbox" id="fri" name="days"> Fri
                     <input type="checkbox" id="sat" name="days"> Sat
                     <input type="checkbox" id="sun" name="days"> Sun
                 </div>
@@ -64,11 +74,11 @@
                     </div>
                     <div class="formulario">
                         <label for="seats">Seats</label>
-                        <input type="number" id="seats" name="seats" value="2" min="1">
+                        <input type="number" id="seats" name="seats" value="1" min="1">
                     </div>
                     <div class="formulario">
                         <label for="fee">Fee</label>
-                        <input type="number" id="fee" name="fee" value="15" min="0">
+                        <input type="number" id="fee" name="fee" value="0" min="0">
                     </div>
                 </div>
                 <div class="detalles-vehiculo">
@@ -97,6 +107,78 @@
                     <button type="button" id="create-ride-btn">Create</button>
                 </div>
             </form>
+
+            <!-- FORM RESPONSIVE SMARTPHONES Y TABLES -->
+            <form id="form-responsive-2">
+                <div class="formulario" id="form-solo">
+                    <label for="ride-name">Ride name</label>
+                    <input type="text" id="ride-name" name="ride-name">
+                </div>
+                <div class="grupo-formularios">
+                    <div class="formulario">
+                        <label for="start">Start</label>
+                        <input type="text" id="start" name="departure">
+                    </div>
+                    <div class="formulario">
+                        <label for="end">End</label>
+                        <input type="text" id="end" name="arrival">
+                    </div>
+                </div>
+                <div class="formulario" id="form-solo">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description">
+                </div>
+                <hr id="linea-responsive-2">
+                <div id="info-tiempo">
+                    <div id="departure-arrival">
+                        <div class="formulario" id="form-solo">
+                            <label for="time-start">Departure</label>
+                            <input type="time" id="time-start" name="time-start">
+                        </div>
+                        <div class="formulario" id="form-solo">
+                            <label for="time-finish">Estimated Arrival</label>
+                            <input type="time" id="time-finish" name="time-finish">
+                        </div>
+                    </div>
+                    <div id="week-days">
+                        <label for="days">Select Days</label>
+                        <div class="cb-dias">
+                            <div class="dia">
+                                <input type="checkbox" id="mon" name="days">
+                                <label for="mon">Mon</label>
+                            </div>
+                            <div class="dia">
+                                <input type="checkbox" id="tue" name="days">
+                                <label for="tue">Tue</label>
+                            </div>
+                            <div class="dia">
+                                <input type="checkbox" id="wed" name="days">
+                                <label for="wed">Wed</label>
+                            </div>
+                            <div class="dia">
+                                <input type="checkbox" id="thu" name="days">
+                                <label for="thu">Thu</label>
+                            </div>
+                            <div class="dia">
+                                <input type="checkbox" id="fri" name="days">
+                                <label for="fri">Fri</label>
+                            </div>
+                            <div class="dia">
+                                <input type="checkbox" id="sat" name="days">
+                                <label for="sat">Sat</label>
+                            </div>
+                            <div class="dia">
+                                <input type="checkbox" id="sun" name="days">
+                                <label for="sun">Sun</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="acciones-form">
+                    <a href="../pantallas/my_rides.html" class="cancelar">Cancel</a>
+                    <button type="button" id="create-ride-btn-responsive">Create</button>
+                </div>
+            </form>
         </div>
     </main>
     <footer>
@@ -109,7 +191,9 @@
         <p>&copy; Aventones.com</p>
     </footer>
     <script src="/Proyecto-1/js/rides_functionality.js"></script>
+    <script src="/Proyecto-1/js/user_functionality.js"></script>
     <script>
+        welcomeMessage();
         bindEvents();
     </script>
 </body>
