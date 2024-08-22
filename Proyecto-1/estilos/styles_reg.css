@@ -124,7 +124,14 @@ footer p {
 /* Tablet (iPad Pro) */
 @media screen and (max-width: 1024px) {
     .contenedor-principal {
-        width: 450px;
+        margin-bottom: 20px;
+        margin-top: 200px !important;
+    }
+
+    h2 {
+        text-align: start;
+        color: #555;
+        font-size: 20px;
     }
 
     header img {
@@ -133,7 +140,7 @@ footer p {
     }
 
     header h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .datos-form {
@@ -142,6 +149,19 @@ footer p {
 
     .datos-form input, .datos-form select {
         width: 100%;
+    }
+
+    .datos-form input {
+        width: 96% !important;
+    }
+
+    #password-data {
+        display: flex;
+        flex-direction: unset;
+    }
+
+    #user-reg-main-container {
+        margin-top: 10px;
     }
 
     .links {
@@ -160,6 +180,15 @@ footer p {
 @media screen and (max-width: 768px) {
     .contenedor-principal {
         width: 300px;
+        margin-bottom: 20px;
+        margin-top: 200px;
+    }
+
+    h2 {
+        text-align: start;
+        color: #555;
+        font-size: 20px;
+        margin: 0 0 10px;
     }
 
     header img {
@@ -177,6 +206,23 @@ footer p {
 
     .datos-form input, .datos-form select {
         width: 100%;
+    }
+
+    .datos-form input {
+        width: 278px !important;
+    }
+
+    #password-data {
+        display: flex;
+        flex-direction: unset;
+    }
+
+    #password-data input {
+        width: 40% !important;
+    }
+
+    #user-reg-main-container {
+        margin-top: 10px;
     }
 
     .links {

@@ -97,3 +97,35 @@ form {
 .acciones-form .cancelar:hover {
     color: #0675b1;
 }
+
+div#form-responsive-2{
+    display:none;
+}
+@media (max-width: 1024px) and (min-width: 380px) {
+    div#form-responsive-1{
+        display: none;
+    }
+
+    div#form-responsive-2{
+        display: block;
+        padding: 10px;
+    }
+
+    input#descripcion {
+        height: 100px;
+    }
+
+    .acciones-form {
+        justify-content: space-around;
+    }
+
+    .acciones-form button {
+        padding: 12px 45px;
+    }
+
+    hr#linea-datos-carro{
+        display: block;
+        width: 100%;
+        margin: 10px 0 20px;
+    }
+}

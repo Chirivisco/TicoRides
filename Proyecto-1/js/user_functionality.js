@@ -282,7 +282,7 @@ function saveDriver(firstName, lastName, email, password, address, country, stat
 function login(e) {
     e.preventDefault();
 
-    
+
     const username = document.getElementById('username');
     const passwordInput = document.getElementById('password');
 
@@ -354,6 +354,180 @@ function welcomeMessage() {
     }
 }
 
+// Método que carga la información del usuario logueado
+function loadUserData() {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    const drivers = JSON.parse(localStorage.getItem('drivers'));
+
+    if (loggedInUser) {
+        // vista de pc
+        document.getElementById('primerNombre').value = loggedInUser.firstName;
+        document.getElementById('apellidos').value = loggedInUser.lastName;
+        document.getElementById('email').value = loggedInUser.email;
+        document.getElementById('contrasena').value = loggedInUser.password;
+        document.getElementById('direccion').value = loggedInUser.address;
+        document.getElementById('pais').value = loggedInUser.country;
+        document.getElementById('estado').value = loggedInUser.state;
+        document.getElementById('ciudad').value = loggedInUser.city;
+        document.getElementById('telefono').value = loggedInUser.phoneNumber;
+
+        // vista responsive
+        document.getElementById('nombreCompleto').value = loggedInUser.firstName + ' ' + loggedInUser.lastName;
+        document.getElementById('email-responsive').value = loggedInUser.email;
+        document.getElementById('contrasena-responsive').value = loggedInUser.password;
+        document.getElementById('direccion-responsive').value = loggedInUser.address;
+        document.getElementById('pais-responsive').value = loggedInUser.country;
+        document.getElementById('estado-responsive').value = loggedInUser.state;
+        document.getElementById('ciudad-responsive').value = loggedInUser.city;
+        document.getElementById('telefono-responsive').value = loggedInUser.phoneNumber;
+
+        const driverData = drivers && drivers.find(driver => driver.email === loggedInUser.email);
+        if (driverData) {
+            document.getElementById('marca-carro').value = driverData.brandCar;
+            document.getElementById('modelo-carro').value = driverData.modelCar;
+            document.getElementById('ano-carro').value = driverData.yearCar;
+            document.getElementById('placa-carro').value = driverData.numberPlate;
+
+            document.getElementById('marca-carro-responsive').value = driverData.brandCar;
+            document.getElementById('modelo-carro-responsive').value = driverData.modelCar;
+            document.getElementById('ano-carro-responsive').value = driverData.yearCar;
+            document.getElementById('placa-carro-responsive').value = driverData.numberPlate;
+        }
+    }
+}
+
+// Método que actualiza los datos del usuario o conductor logueado.
+function updateUserData() {
+    // detecta si la vista es responsive
+    const responsive = window.innerWidth <= 1024 && window.innerWidth >= 380;
+
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    const users = JSON.parse(localStorage.getItem('users'));
+    const drivers = JSON.parse(localStorage.getItem('drivers')); // Lista de drivers almacenada en localStorage
+
+    if (loggedInUser) {
+        let firstName, lastName, email, password, repeatpassword, address, country, state, city, phoneNumber;
+        let brandCar, modelCar, yearCar, numberPlate; // Datos adicionales del vehículo
+
+        if (responsive) {
+            // obtiene los datos de la vista responsive
+            const fullName = document.getElementById('nombreCompleto').value.split(' ');
+            firstName = fullName[0];
+            lastName = fullName.slice(1).join(' ');
+            email = document.getElementById('email-responsive').value;
+            password = document.getElementById('contrasena-responsive').value;
+            repeatpassword = document.getElementById('repetirContrasena-responsive').value;
+            address = document.getElementById('direccion-responsive').value;
+            country = document.getElementById('pais-responsive').value;
+            state = document.getElementById('estado-responsive').value;
+            city = document.getElementById('ciudad-responsive').value;
+            phoneNumber = document.getElementById('telefono-responsive').value;
+
+            // Valida solo si la contraseña ha cambiado
+            if (password !== loggedInUser.password && password !== repeatpassword) {
+                alert("Las contraseñas no coinciden");
+                return;
+            }
+
+            // obtiene los datos del vehiculo en la vista responsive
+            if (loggedInUser.type === 'driver') {
+                brandCar = document.getElementById('marca-carro-responsive').value;
+                modelCar = document.getElementById('modelo-carro-responsive').value;
+                yearCar = document.getElementById('ano-carro-responsive').value;
+                numberPlate = document.getElementById('placa-carro-responsive').value;
+            }
+
+        } else {
+            // obtiene los datos de la vista pc
+            firstName = document.getElementById('primerNombre').value;
+            lastName = document.getElementById('apellidos').value;
+            email = document.getElementById('email').value;
+            password = document.getElementById('contrasena').value;
+            repeatpassword = document.getElementById('repetirContrasena').value;
+            address = document.getElementById('direccion').value;
+            country = document.getElementById('pais').value;
+            state = document.getElementById('estado').value;
+            city = document.getElementById('ciudad').value;
+            phoneNumber = document.getElementById('telefono').value;
+
+            // Valida solo si la contraseña ha cambiado
+            if (password !== loggedInUser.password && password !== repeatpassword) {
+                alert("Las contraseñas no coinciden");
+                return;
+            }
+
+            // obtiene los datos del vehiculo en la vista de pc 
+            if (loggedInUser.type === 'driver') {
+                brandCar = document.getElementById('marca-carro').value;
+                modelCar = document.getElementById('modelo-carro').value;
+                yearCar = document.getElementById('ano-carro').value;
+                numberPlate = document.getElementById('placa-carro').value;
+            }
+        }
+
+        // Si el usuario logueado es un driver, actualiza SOLO en la lista de drivers
+        if (loggedInUser.type === 'driver') {
+            
+            loggedInUser.firstName = firstName;
+            loggedInUser.lastName = lastName;
+            loggedInUser.email = email;
+            loggedInUser.password = password;
+            loggedInUser.address = address;
+            loggedInUser.country = country;
+            loggedInUser.state = state;
+            loggedInUser.city = city;
+            loggedInUser.phoneNumber = phoneNumber;
+            
+            // actualiza los datos del vehículo
+            loggedInUser.brandCar = brandCar;
+            loggedInUser.modelCar = modelCar;
+            loggedInUser.yearCar = yearCar;
+            loggedInUser.numberPlate = numberPlate;
+
+            // actualiza los datos del driver
+            const driverIndex = drivers.findIndex(driver => driver.id === loggedInUser.id);
+            if (driverIndex !== -1) {
+                drivers[driverIndex] = loggedInUser;
+                localStorage.setItem('drivers', JSON.stringify(drivers));
+            }
+        } else {
+            // actualiza los datos del usuario en la lista de users
+            loggedInUser.firstName = firstName;
+            loggedInUser.lastName = lastName;
+            loggedInUser.email = email;
+            loggedInUser.password = password;
+            loggedInUser.address = address;
+            loggedInUser.country = country;
+            loggedInUser.state = state;
+            loggedInUser.city = city;
+            loggedInUser.phoneNumber = phoneNumber;
+
+            const userIndex = users.findIndex(user => user.id === loggedInUser.id);
+            if (userIndex !== -1) {
+                users[userIndex] = loggedInUser;
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+        }
+
+        // actualiza los datos del usuario logueado
+        localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
+
+        alert("Usuario actualizado correctamente");
+    }
+}
+
+// Asociar el evento de clic al botón de guardar cambios
+document.querySelectorAll('.submit-changes').forEach(button => {
+    button.addEventListener('click', updateUserData);
+});
+
+// Asociar el evento de clic al botón de guardar cambios
+document.querySelectorAll('.submit-changes').forEach(button => {
+    button.addEventListener('click', updateUserData);
+});
+
+
+
 function bindEvents() {
 
     // Evento de registro de usuario normal
@@ -377,8 +551,21 @@ function bindEvents() {
         loginButton.addEventListener('click', login);
     }
 
-    // Evento de mensaje de bienvenida responsive
-    welcomeMessage();
+    // Evento para actualizar la info de un usuario
+    const editUserButtons = document.getElementsByClassName('submit-changes');
+    if (editUserButtons) {
+        for (let i = 0; i < editUserButtons.length; i++) {
+            editUserButtons[i].addEventListener('click', editUserButtonsHandler);
+        }
+    }
+
+    // Evento para actualizar la info de un conductor
+    const editDriverButtons = document.getElementsByClassName('edit-driver');
+    if (editDriverButtons) {
+        for (let i = 0; i < editDriverButtons.length; i++) {
+            editDriverButtons[i].addEventListener('click', editUserButtonsHandler);
+        }
+    }
 }
 
 function registerButtonHandler(event) {
@@ -391,4 +578,8 @@ function registerDriverHandler(event) {
 
 function loginButtonHandler(event) {
     login(event);
+}
+
+function editUserButtonsHandler() {
+    updateUserData();
 }

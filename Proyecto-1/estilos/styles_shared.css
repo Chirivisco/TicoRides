@@ -235,4 +235,17 @@
             font-size: 18px;
             margin-left: 10px;
         }
+
+        h2#main-title-responsive {
+            font-size: 20px;
+            font-weight: bold;
+            display: grid;
+            justify-items: start;
+            margin-bottom: 20px;
+        }
+
+        h2#menu-selec {
+            font-size: 14px;
+            font-weight: lighter;
+        }
     }

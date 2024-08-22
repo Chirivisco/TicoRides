@@ -1,3 +1,31 @@
+// Método que carga la información del vehículo del usuario conductor logueado
+function loadCarDetails() {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    // verifica si el usuario logueado es un conductor
+    if (loggedInUser && loggedInUser.type === 'driver') {
+        // obtiene los detalles del vehículo del conductor logueado
+        const brandCar = loggedInUser.brandCar;
+        const modelCar = loggedInUser.modelCar;
+        const yearCar = loggedInUser.yearCar;
+
+        const make = document.getElementById('make');
+        const model = document.getElementById('model');
+        const year = document.getElementById('year');
+
+        if (make && model && year) {
+            const option = document.createElement('option');
+            option.value = brandCar;
+            option.text = brandCar;
+            option.selected = true;
+            model.value = modelCar || "";
+            year.value = yearCar || year.value;
+            make.appendChild(option);   
+        }
+    }
+}
+
+
 // Método que crea un nuevo ride
 function createRide(e) {
     e.preventDefault();

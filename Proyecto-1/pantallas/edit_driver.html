@@ -18,8 +18,9 @@
         <div class="contenido-encabezado">
             <nav>
                 <ul>
-                    <li><a href="../pantallas/search_ride.html">Home</a></li>
-                    <li><a href="../pantallas/edit_profile.html" class="active">Settings</a></li>
+                    <li><a href="../pantallas/my_rides.html">Dashboard</a></li>
+                    <li><a href="../pantallas/bookings.html">Bookings</a></li>
+                    <li><a href="../pantallas/edit_driver.html" class="active">Settings</a></li>
                 </ul>
             </nav>
             <div class="campo-busqueda">
@@ -28,7 +29,7 @@
                     <img src="/Proyecto-1/iconos/profile_picture.png" alt="Profile Icon">
                     <div class="menu-perfil">
                         <a href="../index.html">Logout</a>
-                        <a href="../pantallas/edit_profile.html">Settings</a>
+                        <a href="../pantallas/edit_driver.html">Settings</a>
                     </div>
                 </div>
             </div>
@@ -95,9 +96,29 @@
                             <input type="text" id="telefono">
                         </div>
                     </div>
+                    <div class="grupo-formulario">
+                        <div class="formulario">
+                            <label for="marca-carro">Brand Car</label>
+                            <input type="text" id="marca-carro">
+                        </div>
+                        <div class="formulario">
+                            <label for="modelo-carro">Model Car</label>
+                            <input type="text" id="modelo-carro">
+                        </div>
+                    </div>
+                    <div class="grupo-formulario">
+                        <div class="formulario">
+                            <label for="ano-carro">Year</label>
+                            <input type="text" id="ano-carro">
+                        </div>
+                        <div class="formulario">
+                            <label for="placa-carro">Number Plate</label>
+                            <input type="text" id="placa-carro">
+                        </div>
+                    </div>
                     <div class="acciones-form">
-                        <a href="../pantallas/search_ride.html" class="cancelar">Cancel</a>
-                        <button class="submit-changes" type="button">Save</button>
+                        <a href="../pantallas/my_rides.html" class="cancelar">Cancel</a>
+                        <button class="edit-driver" type="button">Save</button>
                     </div>
                 </form>
             </div>
@@ -166,9 +187,30 @@
                         <label for="descripcion">About me</label>
                         <input type="text" id="descripcion">
                     </div>
+                    <hr id="linea-datos-carro">
+                    <div class="grupo-formulario">
+                        <div class="formulario">
+                            <label for="marca-carro">Brand Car</label>
+                            <input type="text" id="marca-carro-responsive">
+                        </div>
+                        <div class="formulario">
+                            <label for="modelo-carro">Model Car</label>
+                            <input type="text" id="modelo-carro-responsive">
+                        </div>
+                    </div>
+                    <div class="grupo-formulario">
+                        <div class="formulario">
+                            <label for="ano-carro">Year</label>
+                            <input type="text" id="ano-carro-responsive">
+                        </div>
+                        <div class="formulario">
+                            <label for="placa-carro">Number Plate</label>
+                            <input type="text" id="placa-carro-responsive">
+                        </div>
+                    </div>
                     <div class="acciones-form">
-                        <a href="../pantallas/search_ride.html" class="cancelar">Cancel</a>
-                        <button class="submit-changes" type="button">Save</button>
+                        <a href="../pantallas/my_rides.html" class="cancelar">Cancel</a>
+                        <button class="edit-driver" type="button">Save</button>
                     </div>
                 </form>
             </div>
