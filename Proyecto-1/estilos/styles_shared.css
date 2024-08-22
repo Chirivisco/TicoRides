@@ -228,4 +228,11 @@
         hr {
             display: none;
         }
+
+        h2#my-rides {
+            margin-bottom: 15px !important;
+            display: flex;
+            font-size: 18px;
+            margin-left: 10px;
+        }
     }

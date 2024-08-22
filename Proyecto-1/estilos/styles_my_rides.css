@@ -102,10 +102,6 @@ div.welcome-user {
         display: none;
     }
 
-    h2#my-rides {
-        margin-bottom: 15px !important;
-    }
-
     div#responsive-1 {
         border: 1px solid gray;
         border-radius: 10px;

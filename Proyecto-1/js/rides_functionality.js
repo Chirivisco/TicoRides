@@ -543,6 +543,105 @@ function requestRide() {
     alert('Se ha enviado solicitud de ride');
 }
 
+// Método que carga los rides con solicitudes de un driver específico
+function loadRequestedRides() {
+    if (window.location.pathname.includes('bookings.html')) {
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        const rideRequests = JSON.parse(localStorage.getItem('rideRequests')) || [];
+        const rides = JSON.parse(localStorage.getItem('rides')) || [];
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+
+        // obtiene todos los rides del driver
+        const driverRides = rides.filter(ride => ride.driverId === loggedInUser.id);
+
+        // obtiene los rides con solicitudes
+        const filteredRequests = rideRequests.filter(request =>
+            driverRides.some(ride => ride.id === request.rideId)
+        );
+
+        // Obtener referencias a las tablas de las dos vistas
+        const pcTableBody = document.querySelector('#form-responsive-1 tbody');
+        const responsiveTableBody = document.querySelector('#form-responsive-2 tbody');
+
+        pcTableBody.innerHTML = '';
+        responsiveTableBody.innerHTML = '';
+
+        // llena las tablas con los datos
+        filteredRequests.forEach(request => {
+
+            // busca el usuario que solicitó el ride
+            let userName = 'Unknown User';
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].id === request.userId) {
+                    userName = users[i].firstName + ' ' + users[i].lastName;
+                    break;
+                }
+            }
+
+            // busca la descripción (lugar de salida y llegada) del ride
+            let rideDescription = 'Unknown Ride';
+            for (let j = 0; j < rides.length; j++) {
+                if (rides[j].id === request.rideId) {
+                    rideDescription = rides[j].departure + ' - ' + rides[j].arrival;
+                    break;
+                }
+            }
+
+            // crea las filas con los datos para la tabla
+            const rowHtml = `
+                <tr>
+                    <td>
+                        <img src="/Proyecto-1/iconos/profile_picture.png" alt="User Icon">
+                        ${userName}
+                    </td>
+                    <td>${rideDescription}</td>
+                    <td>
+                        <button type="button" class="accept-btn" data-ride-id="${request.rideId}" data-user-id="${request.userId}">Accept</button> | 
+                        <button type="button" class="reject-btn" data-ride-id="${request.rideId}" data-user-id="${request.userId}">Reject</button>
+                    </td>
+                </tr>
+            `;
+
+            // agrega la fila creada a las dos tablas
+            pcTableBody.innerHTML += rowHtml;
+            responsiveTableBody.innerHTML += rowHtml;
+        });
+    }
+}
+
+function rideRequestHandler(event) {
+    // Evitar el comportamiento predeterminado del enlace
+    event.preventDefault();
+
+    // Obtener el botón que fue clicado y los atributos data-ride-id y data-user-id
+    const target = event.target;
+    const rideId = parseInt(target.getAttribute('data-ride-id'));
+    const userId = parseInt(target.getAttribute('data-user-id'));
+    const action = target.classList.contains('accept-btn') ? 'accept' : 'reject';
+
+    const rideRequests = JSON.parse(localStorage.getItem('rideRequests')) || [];
+    const rides = JSON.parse(localStorage.getItem('rides')) || [];
+
+    // Encuentra la solicitud de viaje y el ride correspondiente
+    const requestIndex = rideRequests.findIndex(request => request.rideId === rideId && request.userId === userId);
+    const rideIndex = rides.findIndex(ride => ride.id === rideId);
+
+    if (requestIndex !== -1 && rideIndex !== -1) {
+        if (action === 'accept') {
+            // Resta 1 al atributo 'seats' del ride
+            rides[rideIndex].seats = String(Math.max(0, Number(rides[rideIndex].seats) - 1));
+        }
+
+        // Elimina la solicitud de la lista de solicitudes
+        rideRequests.splice(requestIndex, 1);
+
+        // Actualiza el localStorage
+        localStorage.setItem('rideRequests', JSON.stringify(rideRequests));
+        localStorage.setItem('rides', JSON.stringify(rides));
+
+        window.location.href = "../pantallas/bookings.html";
+    }
+}
 
 
 function bindEvents() {
@@ -598,6 +697,22 @@ function bindEvents() {
             requestRideButtons[i].addEventListener('click', requestRideButtonHandler);
         }
     }
+
+    // Evento para aceptar una solicitud de ride
+    const acceptRequestButtons = document.getElementsByClassName('accept-btn');
+    if (acceptRequestButtons) {
+        for (let i = 0; i < acceptRequestButtons.length; i++) {
+            acceptRequestButtons[i].addEventListener('click', requestHandler);
+        }
+    }
+
+    // Evento para rechazar una solicitud de ride
+    const declineRequestButtons = document.getElementsByClassName('reject-btn');
+    if (declineRequestButtons) {
+        for (let i = 0; i < declineRequestButtons.length; i++) {
+            declineRequestButtons[i].addEventListener('click', requestHandler);
+        }
+    }
 }
 
 function createRideButtonHandler(e) {
@@ -618,6 +733,10 @@ function clearFilterButtonHandler() {
 
 function requestRideButtonHandler() {
     requestRide();
+}
+
+function requestHandler(event) {
+    rideRequestHandler(event);
 }
 
 // ejecuta los bindEvents después de que se ejecutó todo el DOM.
